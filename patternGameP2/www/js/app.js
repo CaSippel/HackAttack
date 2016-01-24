@@ -36,6 +36,9 @@ angular.module('starter', ['ionic'])
 
       onDraw:function(pattern) {
         if(entry){
+          $("#success-alert").css("visibility", "hidden");
+          $("#pw-alert").css("visibility", "visible");
+
           entry=false;
           myDataRef.child("P2solve").set(pattern);
           myDataRef.child("P2_T").push(true);
@@ -46,12 +49,13 @@ angular.module('starter', ['ionic'])
             console.log(stufz);
             if (pattern == stufz) {
               //show alert
-              $(".alert").css("visibility", "visible");
+              $("#pw-alert").css("visibility", "hidden");
+              $("#success-alert").css("visibility", "visible");
+
               myDataRef.child("P2enab").set(false);
               myDataRef.child("P2d").push(true);
               entry = true;
             } else {
-              // hide alert
               $(".alert").css("visibility", "hidden");
               lock.error();
             }
