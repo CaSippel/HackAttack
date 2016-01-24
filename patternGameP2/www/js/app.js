@@ -52,7 +52,7 @@ angular.module('starter', ['ionic'])
               entry = true;
             } else {
               // hide alert
-              $(".alert").css("visibility", "hidden").fade();
+              $(".alert").css("visibility", "hidden");
               lock.error();
             }
           });
