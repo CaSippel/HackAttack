@@ -35,6 +35,8 @@ angular.module('starter', ['ionic'])
     var lock = new PatternLock('#patternContainer', {
 
       onDraw:function(pattern) {
+        //$(".alert").css("visibility", "hidden");
+        $(".alert").toggle( "slow");
         if(entry){
           entry=false;
           myDataRef.child("P1solve").set(pattern);
@@ -47,11 +49,12 @@ angular.module('starter', ['ionic'])
             if (pattern == stufz) {
               //confirm('You got it!\nEnter in a new password');
               $(".alert").css("visibility", "visible");
-              $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-                $("#success-alert").alert('close');
-              });
+
               myDataRef.child("P1enab").set(false);
               myDataRef.child("P1d").push(true);
+              //$("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+              //  $("#success-alert").alert('close');
+              //});
               entry = true;
             } else {
               lock.error();
