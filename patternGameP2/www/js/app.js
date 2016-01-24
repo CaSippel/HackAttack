@@ -45,15 +45,14 @@ angular.module('starter', ['ionic'])
             stufz = snapshot.val();
             console.log(stufz);
             if (pattern == stufz) {
-              //confirm('You got it!\nEnter in a new password');
+              //show alert
               $(".alert").css("visibility", "visible");
-              $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-                $("#success-alert").alert('close');
-              });
               myDataRef.child("P2enab").set(false);
               myDataRef.child("P2d").push(true);
               entry = true;
             } else {
+              // hide alert
+              $(".alert").css("visibility", "hidden").fade();
               lock.error();
             }
           });
