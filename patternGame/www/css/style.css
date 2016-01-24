@@ -1,0 +1,22 @@
+/* Empty. Add your own CSS if you like */
+.scroll-content {
+  background-color: #3382c0;
+}
+
+div#patternContainer {
+  margin: 0 auto;
+}
+
+
+
+#Main {width:540px; margin:0 auto; display: block}
+
+
+#Gamewin {width:320px; float:left}
+
+#myCanvas { background:#999999; border:2px solid #222222; }
+
+#Infowin {width:200px; float:right}
+
+#Score  {background:#999999; border:2px solid #222222; padding-bottom:20px;}
+#Next  {background:#999999; border:2px solid #222222;}
