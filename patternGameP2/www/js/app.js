@@ -21,9 +21,14 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
 
-    // sound
-    var snd = new Audio("ElevatorMusic.mp3"); // buffers automatically when created
-    snd.play();
+    // neverending sound
+    var dingSound = new Audio("ding.mp3");
+    /*var snd = new Audio("ElevatorMusic.mp3"); // buffers automatically when created
+    snd.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+    }, false);
+    snd.play();*/
 
     var myDataRef = new Firebase('https://at6zeesf8rm.firebaseio-demo.com');
     myDataRef.child("P2enabled").set(false);
@@ -49,6 +54,7 @@ angular.module('starter', ['ionic'])
             console.log(stufz);
             if (pattern == stufz) {
               //show alert
+              dingSound.play();
               $("#pw-alert").css("visibility", "hidden");
               $("#success-alert").css("visibility", "visible");
 
